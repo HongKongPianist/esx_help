@@ -22,3 +22,5 @@ It basically is a modify version of /911 command that provide the blip for ems
 
 
 'start esx_help'
+
+As this is my first time learning how to code in lua, hope you guys will enjoy it 
