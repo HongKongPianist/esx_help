@@ -28,7 +28,7 @@ AddEventHandler('Request999', function(id, name, message, loc, inc)
   TriggerServerEvent("chekjob", name, message, loc, inc)
   if pid == myId then
     local coords = GetEntityCoords(GetPlayerPed(-1))
-    TriggerEvent('chatMessage', "", {20, 255, 239}, " 您的求助個案: [999] | 地區:" .. loc .." || 事故: ".. inc .." || 發生情況: " .. message)
+    TriggerEvent('chatMessage', "", {20, 255, 239}, " YourCase: [999] | Region:" .. loc .." || Incident: ".. inc .." || Addition: " .. message)
     TriggerServerEvent('esx_help:alertcops', coords.x, coords.y, coords.z)
   end
 end)
@@ -39,7 +39,7 @@ AddEventHandler('Help999ToCops', function(id, name, message, loc, inc)
   local pid = GetPlayerFromServerId(id)
   if pid == myId then
     local coords = GetEntityCoords(GetPlayerPed(-1))
-    TriggerEvent('chatMessage', "", {20, 255, 239}, " [999] | 地區:" .. loc .." || 事故: ".. inc .." || 發生情況: " .. message)
+    TriggerEvent('chatMessage', "", {20, 255, 239}, " [999] | Region:" .. loc .." || Incident: ".. inc .." || Addition: " .. message)
     TriggerServerEvent('esx_help:alertcops', coords.x, coords.y, coords.z)
   end
 end)
@@ -49,10 +49,10 @@ RegisterCommand("done", function(source, args, rawCommand)
 
 	if PlayerData.job and PlayerData.job.name == 'police' or PlayerData.job.name == 'ambulance' then
             TriggerEvent('esx_help:removecopblip')
-            ESX.ShowAdvancedNotification('緊急求助熱線', '~y~999', '情況已經被解決', 'CHAR_CHAT_CALL', 3)  
+            ESX.ShowAdvancedNotification('EMS Service', '~y~999', 'The Case has been solved', 'CHAR_CHAT_CALL', 3)  
             Citizen.Wait(2500)
         else 
-            ESX.ShowAdvancedNotification('緊急求助熱線', '~y~999', '你不是公職人員', 'CHAR_CHAT_CALL', 3) 
+            ESX.ShowAdvancedNotification('EMS', '~y~999', 'You are not EMS', 'CHAR_CHAT_CALL', 3) 
             Citizen.Wait(2500)
         end
 end)
@@ -64,7 +64,7 @@ end)
   
 RegisterNetEvent('esx_help:setcopblip')
 AddEventHandler('esx_help:setcopblip', function(cx,cy,cz)
-  ESX.ShowAdvancedNotification('緊急求助熱線', '~y~999', '請盡快調派救緩人員到現場協助', 'CHAR_CHAT_CALL', 3)  
+  ESX.ShowAdvancedNotification('EMS Service', '~y~999', 'the location has set for you', 'CHAR_CHAT_CALL', 3)  
     Citizen.Wait(2500)
     RemoveBlip(blip)
       blip = AddBlipForCoord(cx,cy,cz)
