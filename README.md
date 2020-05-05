@@ -13,9 +13,10 @@ It basically is a modify version of /911 command that provide the blip for ems
 
 
 ### Manually
--Download it through 
+-Download it through (https://github.com/HongKongPianist/esx_help)
+-remove "master" form the folder name
 -put it in the whichever folder (personally recommand 'esx' directory)
-
+-enjoy
 
 ## Installation
 -Simply add this into your server.cfg or some people may use resource.cfg
