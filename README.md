@@ -24,3 +24,10 @@ It basically is a modify version of /911 command that provide the blip for ems
 'start esx_help'
 
 As this is my first time learning how to code in lua, hope you guys will enjoy it 
+
+#Command 
+/999 --Allows you to report a emergency case
+By doing this you have to type something after /999 for example "/999 [] [] any infomation you can type it in etc
+/done --only ems are permited to use that 
+only ems has the right to do it, otherwise it will comes up a message saying ur not apart of ems members
+
