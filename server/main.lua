@@ -55,7 +55,7 @@ AddEventHandler('chatMessage', function(source, color, msg)
 			end
             TriggerClientEvent("Request999", -1, source, names1, textmsg, location, incident)
 		elseif tablelength(cm) < 2 then
-		    TriggerClientEvent('chatMessage', source, "[999報案中心] 無法聯絡, 請使用:", {255, 0, 0}, "/999 [正確地點] [事故] [發生情況]")
+		    TriggerClientEvent('chatMessage', source, "[EMS Service] Couldn't Contact, Please use:", {255, 0, 0}, "/999 [Region] [Incident] [Addition]")
 		end
 	end	
 	
