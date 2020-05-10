@@ -33,7 +33,7 @@ AddEventHandler('chekjob', function(n, m, l, i)
     end
 end)
 
-AddEventHandler('chatMessage', function(source, color, msg)
+AddEventHandler('chat:addMessage', function(source, color, msg)
 	cm = stringsplit(msg, " ")
     if cm[1] == "/999" then
 		CancelEvent()
