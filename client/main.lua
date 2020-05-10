@@ -28,7 +28,7 @@ AddEventHandler('Request999', function(id, name, message, loc, inc)
   TriggerServerEvent("chekjob", name, message, loc, inc)
   if pid == myId then
     local coords = GetEntityCoords(GetPlayerPed(-1))
-    TriggerEvent('chat:addMessage', "", {20, 255, 239}, " YourCase: [999] | Region:" .. loc .." || Incident: ".. inc .." || Addition: " .. message)
+    TriggerEvent('chatMessage', "", {20, 255, 239}, " YourCase: [999] | Region:" .. loc .." || Incident: ".. inc .." || Addition: " .. message)
     TriggerServerEvent('esx_help:alertcops', coords.x, coords.y, coords.z)
   end
 end)
@@ -39,7 +39,7 @@ AddEventHandler('Help999ToCops', function(id, name, message, loc, inc)
   local pid = GetPlayerFromServerId(id)
   if pid == myId then
     local coords = GetEntityCoords(GetPlayerPed(-1))
-    TriggerEvent('chat:addMessage', "", {20, 255, 239}, " [999] | Region:" .. loc .." || Incident: ".. inc .." || Addition: " .. message)
+    TriggerEvent('chatMessage', "", {20, 255, 239}, " [999] | Region:" .. loc .." || Incident: ".. inc .." || Addition: " .. message)
     TriggerServerEvent('esx_help:alertcops', coords.x, coords.y, coords.z)
   end
 end)
