@@ -33,7 +33,7 @@ AddEventHandler('chekjob', function(n, m, l, i)
     end
 end)
 
-AddEventHandler('chat:addMessage', function(source, color, msg)
+AddEventHandler('chatMessage', function(source, color, msg)
 	cm = stringsplit(msg, " ")
     if cm[1] == "/999" then
 		CancelEvent()
@@ -55,7 +55,7 @@ AddEventHandler('chat:addMessage', function(source, color, msg)
 			end
             TriggerClientEvent("Request999", -1, source, names1, textmsg, location, incident)
 		elseif tablelength(cm) < 2 then
-		    TriggerClientEvent('chat:addMessage', source, "[EMS Service] Couldn't Contact, Please use:", {255, 0, 0}, "/999 [Region] [Incident] [Addition]")
+		    TriggerClientEvent('chatMessage', source, "[EMS Service] Couldn't Contact, Please use:", {255, 0, 0}, "/999 [Region] [Incident] [Addition]")
 		end
 	end	
 	
